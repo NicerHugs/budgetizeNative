@@ -5,7 +5,7 @@ import React, {
   StyleSheet,
   TouchableNativeFeedback
 } from 'react-native';
-import {colors} from './../styles/variables.js';
+import {colors, fonts} from './../styles/variables.js';
 import {getDollars, getCents} from './../util/moneyFormat.js';
 
 export default React.createClass({
@@ -29,15 +29,16 @@ const styles = StyleSheet.create({
     borderColor: colors.secondary,
     borderStyle: 'solid',
     borderBottomWidth: 1,
-    marginLeft: 14,
-    marginRight: 14,
+    marginLeft: 17,
+    marginRight: 17,
     marginTop: 7
   },
   text: {
     color: colors.primary,
     fontSize: 40,
-    paddingLeft: 13,
-    paddingRight: 13,
+    fontFamily: fonts.regular,
+    paddingLeft: 10,
+    paddingRight: 10,
     paddingBottom: 7,
     textAlign: 'center',
     textAlignVertical: 'center',

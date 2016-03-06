@@ -14,14 +14,9 @@ const colors = {
 // =============================================================================
 
 const fonts = {
-  heavy: {
-    fontFamily: 'Lato',
-    fontWeight: 300
-  },
-  light: {
-    fontFamily: 'Lato',
-    fontWeight: 100
-  }
+  hairline: 'Lato-Hairline',
+  regular: 'Lato-Light',
+  bold: 'Lato-Regular'
 }
 
 export {colors, fonts}

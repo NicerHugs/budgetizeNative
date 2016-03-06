@@ -7,7 +7,7 @@ import React, {
 } from 'react-native';
 import Calculator from './calculator.js';
 import CalcBtn from './calcBtn.js';
-import {colors} from './../styles/variables.js';
+import {colors, fonts} from './../styles/variables.js';
 import {getDollars, getCents} from './../util/moneyFormat.js';
 
 export default React.createClass({
@@ -61,10 +61,9 @@ export default React.createClass({
   }
 });
 
-
 const borderRight = {
   borderRightColor: colors.main,
-  borderRightWidth: 2 ,
+  borderRightWidth: 1,
   borderStyle: 'solid'
 }
 
@@ -77,9 +76,9 @@ const recordBtnStyle = {
 
 const superScript = {
   fontSize: 40,
-  fontWeight: '500',
   color: colors.primary,
-  paddingBottom: 30
+  paddingBottom: 30,
+  fontFamily: fonts.hairline
 }
 
 const styles = StyleSheet.create({
@@ -87,20 +86,21 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     flex: 0,
     flexDirection: 'row',
-    alignItems: 'center'
+    alignItems: 'center',
   },
-  sign: superScript,
+  sign: Object.assign({}, superScript, {fontFamily: fonts.bold}),
   dollars: {
     color: colors.primary,
     fontSize: 100,
-    fontWeight: '500'
+    fontFamily: fonts.regular
   },
-  cents: Object.assign({}, superScript, {fontWeight: '100'}),
+  cents: superScript,
   recordBtnLeft: Object.assign({}, recordBtnStyle, borderRight),
   recordBtnRight: recordBtnStyle,
   recordBtnTxt: {
     color: colors.main,
-    fontSize: 40
+    fontSize: 40,
+    fontFamily: fonts.bold
   },
   footer: {
     flex: 0,
