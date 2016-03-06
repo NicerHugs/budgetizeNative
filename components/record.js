@@ -86,7 +86,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     flex: 0,
     flexDirection: 'row',
-    alignItems: 'center',
+    alignItems: 'center'
   },
   sign: Object.assign({}, superScript, {fontFamily: fonts.bold}),
   dollars: {

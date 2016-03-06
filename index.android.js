@@ -8,9 +8,9 @@ import React, {
   StatusBar,
   ViewPagerAndroid,
   ToolbarAndroid} from 'react-native';
-import Dimensions from 'Dimensions';
 import Record from './components/record.js';
-import {fonts, colors} from './styles/variables.js';
+import MainNav from './components/mainNav.js';
+import {colors} from './styles/variables.js';
 
 let budgetizeNative = React.createClass({
   getInitialState() {
@@ -31,14 +31,7 @@ let budgetizeNative = React.createClass({
           style={styles.toolbar}
           title="Budgetize"
           titleColor={colors.main} />
-        <View style={styles.pageNavWrap}>
-          <View style={styles.pageNav}>
-            <View style={styles.navLinkBorder}><Text style={styles.pageNavLink}>Record</Text></View>
-            <View style={styles.navLinkBorder}><Text style={styles.pageNavLink}>Track</Text></View>
-            <View style={styles.navLink}><Text style={styles.pageNavLink}>Reward</Text></View>
-          </View>
-          <View style={sliderStyle(this.state.page).slider}/>
-        </View>
+        <MainNav page={this.state.page}/>
         <ViewPagerAndroid
           onPageSelected={this.changePage}
           style={styles.viewPager}>
@@ -57,59 +50,15 @@ let budgetizeNative = React.createClass({
   }
 })
 
-
-function sliderStyle(start) {
-  return StyleSheet.create({
-    slider: {
-      borderBottomWidth: 3,
-      borderColor: colors.primary,
-      borderStyle: 'solid',
-      width: Dimensions.get('window').width/3,
-      alignSelf: start === 0 ? 'flex-start' : start === 1 ? 'center' : 'flex-end'
-    }
-  });
-}
-
-const borderRight = {
-  borderRightWidth: 1,
-  borderColor: colors.secondary,
-  borderStyle: 'solid'
-};
-
-
-const navLink = {
-  flex: 1,
-  marginTop: 8,
-  marginBottom: 8
-};
-
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     flexDirection: 'column'
   },
   toolbar: {
-    height: 60,
-    backgroundColor: colors.primary,
+    height: 56,
+    backgroundColor: colors.primary
   },
-  pageNav: {
-    flex: 0,
-    flexDirection: 'row',
-    backgroundColor: colors.main
-  },
-  pageNavWrap: {
-    borderColor: colors.primary,
-    borderBottomWidth: 1,
-    borderStyle: 'solid'
-  },
-  pageNavLink: {
-    color: colors.primary,
-    margin: 0,
-    textAlign: 'center',
-    fontFamily: fonts.regular
-  },
-  navLink: navLink,
-  navLinkBorder: Object.assign({}, borderRight, navLink),
   viewPager: {
     flex: 1,
     flexDirection: 'column'
