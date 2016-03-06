@@ -45,12 +45,14 @@ export default React.createClass({
         <Calculator numberPress={this.handleNumberClick}
                     clear={this.handleClear}/>
         <View style={styles.footer}>
-          <TouchableNativeFeedback>
+          <TouchableNativeFeedback
+            onPress={this.handleAdd}>
             <View style={styles.recordBtnLeft}>
               <Text style={styles.recordBtnTxt}>+</Text>
             </View>
           </TouchableNativeFeedback>
-          <TouchableNativeFeedback>
+          <TouchableNativeFeedback
+            onPress={this.handleSubtract}>
             <View style={styles.recordBtnRight}>
               <Text style={styles.recordBtnTxt}>-</Text>
             </View>
